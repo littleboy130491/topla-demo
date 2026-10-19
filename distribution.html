@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Peta Distribusi — Topla</title>
+    <meta
+      name="description"
+      content="Delapan titik distribusi Topla: kantor pusat, pabrik, gudang, dan hub regional di seluruh Indonesia."
+    />
+    <meta property="og:title" content="Topla — Peta Distribusi" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231d2830'/%3E%3Ctext x='50' y='72' font-family='Arial' font-size='62' font-weight='bold' fill='%23b8e6d9' text-anchor='middle'%3Et%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/catalog.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+  </head>
+  <body class="theme-catalog" data-page="map">
+    <div id="site-header"></div>
+
+    <main class="map-page">
+      <header class="map-hero container">
+        <p class="eyebrow" data-i18n="map.eyebrow"></p>
+        <h1 data-i18n="map.title"></h1>
+        <p data-i18n="map.desc"></p>
+      </header>
+
+      <div class="container map-layout">
+        <div class="map-card">
+          <div class="map-legend">
+            <span class="legend-item"><i class="legend-dot legend-dot--hq"></i><span data-i18n="map.legend.hq"></span></span>
+            <span class="legend-item"><i class="legend-dot legend-dot--factory"></i><span data-i18n="map.legend.factory"></span></span>
+            <span class="legend-item"><i class="legend-dot legend-dot--warehouse"></i><span data-i18n="map.legend.warehouse"></span></span>
+            <span class="legend-item"><i class="legend-dot legend-dot--hub"></i><span data-i18n="map.legend.hub"></span></span>
+          </div>
+          <div class="map-canvas">
+            <svg viewBox="0 0 800 420" role="img" aria-label="Peta distribusi Indonesia">
+              <g class="map-grid-line">
+                <line x1="0" y1="105" x2="800" y2="105" />
+                <line x1="0" y1="210" x2="800" y2="210" />
+                <line x1="0" y1="315" x2="800" y2="315" />
+                <line x1="200" y1="0" x2="200" y2="420" />
+                <line x1="400" y1="0" x2="400" y2="420" />
+                <line x1="600" y1="0" x2="600" y2="420" />
+              </g>
+              <path class="map-island" d="M105 54 L168 96 L200 142 L192 188 L164 206 L148 176 L136 138 L100 96 Z" />
+              <path class="map-island" d="M210 282 L300 274 L354 284 L390 276 L398 292 L330 304 L250 300 L214 294 Z" />
+              <path class="map-island" d="M330 124 L402 110 L456 146 L468 196 L436 236 L378 238 L338 202 L318 158 Z" />
+              <path class="map-island" d="M492 132 L510 110 L520 148 L540 170 L528 198 L512 180 L500 206 L512 236 L488 246 L478 212 L486 176 L470 156 Z" />
+              <path class="map-island" d="M628 206 L700 190 L772 202 L790 230 L756 260 L700 266 L660 248 L636 228 Z" />
+              <path class="map-island map-island--small" d="M548 300 L568 298 L574 306 L554 310 Z" />
+              <path class="map-island map-island--small" d="M584 304 L612 302 L620 310 L592 314 Z" />
+              <path class="map-island map-island--small" d="M630 316 L668 312 L676 320 L640 326 Z" />
+              <path class="map-island map-island--small" d="M560 190 L574 176 L582 196 L570 208 Z" />
+              <path class="map-island map-island--small" d="M80 214 L94 208 L100 220 L86 228 Z" />
+              <text class="map-label" x="150" y="130">SUMATRA</text>
+              <text class="map-label" x="300" y="325">JAWA</text>
+              <text class="map-label" x="388" y="172">KALIMANTAN</text>
+              <text class="map-label" x="500" y="270">SULAWESI</text>
+              <text class="map-label" x="706" y="232">PAPUA</text>
+            </svg>
+            <div class="map-pins" id="map-pins"></div>
+          </div>
+          <p class="map-hint" data-i18n="map.hint"></p>
+        </div>
+
+        <aside class="map-detail" id="map-detail" aria-live="polite"></aside>
+      </div>
+
+      <section class="container location-section">
+        <h2 data-i18n="map.list"></h2>
+        <div class="location-grid" id="map-list"></div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="assets/js/pages/distribution.js"></script>
+  </body>
+</html>

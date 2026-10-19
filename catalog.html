@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Katalog — Topla</title>
+    <meta
+      name="description"
+      content="Katalog Topla: filter produk berdasarkan kata kunci, brand, kategori, dan segmen School atau Office."
+    />
+    <meta property="og:title" content="Topla — Katalog" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231d2830'/%3E%3Ctext x='50' y='72' font-family='Arial' font-size='62' font-weight='bold' fill='%23b8e6d9' text-anchor='middle'%3Et%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/catalog.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+  </head>
+  <body class="theme-catalog" data-page="catalog">
+    <div id="site-header"></div>
+
+    <main class="catalog-page">
+      <header class="catalog-hero container">
+        <p class="eyebrow" data-i18n="catalog.eyebrow"></p>
+        <h1 data-i18n="catalog.title"></h1>
+        <p data-i18n="catalog.desc"></p>
+      </header>
+
+      <div class="category-strip container" id="categories" aria-label="Categories"></div>
+
+      <section class="container catalog-layout" aria-label="Product catalog">
+        <div class="catalog-toolbar">
+          <div class="field">
+            <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+            <input
+              id="catalog-search"
+              type="search"
+              data-i18n-placeholder="catalog.search"
+              aria-label="Search products"
+            />
+          </div>
+          <div class="field field-select">
+            <select id="filter-brand" aria-label="Brand"></select>
+          </div>
+          <div class="field field-select">
+            <select id="filter-category" aria-label="Category"></select>
+          </div>
+          <button class="toolbar-reset" id="catalog-reset" type="button" data-reset-filters>
+            <svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M5.5 15a7 7 0 0011.4 2.4M18.5 9A7 7 0 007.1 6.6"/></svg>
+            <span data-i18n="catalog.reset"></span>
+          </button>
+        </div>
+
+        <div class="segment-row" id="segment-row">
+          <span class="segment-row-label" data-i18n="common.segment"></span>
+          <button class="seg-chip is-active" type="button" data-segment="" aria-pressed="true" data-i18n="common.all"></button>
+          <button class="seg-chip" type="button" data-segment="school" aria-pressed="false" data-i18n="common.school"></button>
+          <button class="seg-chip" type="button" data-segment="office" aria-pressed="false" data-i18n="common.office"></button>
+        </div>
+
+        <div class="catalog-results-head">
+          <p class="result-count" id="result-count" aria-live="polite"></p>
+          <label class="sort-field">
+            <span data-i18n="catalog.sort"></span>
+            <select id="catalog-sort" aria-label="Sort"></select>
+          </label>
+        </div>
+
+        <div class="product-grid product-grid--catalog" id="catalog-grid"></div>
+
+        <div class="catalog-empty" id="catalog-empty">
+          <h2 data-i18n="catalog.empty"></h2>
+          <p data-i18n="catalog.emptyDesc"></p>
+          <button class="btn btn-primary" type="button" data-reset-filters data-i18n="catalog.emptyCta"></button>
+        </div>
+
+        <p class="catalog-demo-note" data-i18n="catalog.demoNote"></p>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="assets/js/pages/catalog.js"></script>
+  </body>
+</html>
